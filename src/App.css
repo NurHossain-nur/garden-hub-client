@@ -1,0 +1,36 @@
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@300;400;500;600;700&display=swap");
+
+@import "tailwindcss";
+@plugin "daisyui" {
+  themes: light --default;
+}
+
+@plugin "daisyui/theme" {
+  name: "light";
+  default: true;
+
+  /*  Gardening Theme Colors */
+  --color-primary: #4CAF50;        /* Leaf Green */
+  --color-secondary: #FFB300;      /* Sunshine Yellow */
+  --color-accent: #8BC34A;         /* Lime Highlight */
+  --color-neutral: #2F3E46;        /* Soil Slate */
+  --color-base-100: #F1F8E9;       /* Garden Background */
+  --color-base-content: #2E7D32;   /* Forest Green Text */
+  --color-muted: #A5D6A7;          /* Muted Mint Text */
+  --color-border: #C5E1A5;         /* Light Leaf Border */
+
+  --color-base-200: #E8F5E9;
+  --color-base-300: #C8E6C9;
+}
+
+.font-heading {
+  font-family: "Bebas Neue", sans-serif;
+}
+
+.font-sans {
+  font-family: "Poppins", sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
