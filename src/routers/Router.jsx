@@ -10,6 +10,7 @@ import ShareTip from "../pages/ShareTip/ShareTip";
 import BrowseTips from "../pages/BrowseTips/BrowseTips";
 import TipDetails from "../pages/TipDetails/TipDetails";
 import MyTips from "../pages/MyTips/MyTips";
+import ExploreGardeners from "../pages/ExploreGardeners/ExploreGardeners";
 // import App from "../App";
 
 
@@ -20,7 +21,7 @@ const router = createBrowserRouter([
     element: <Root></Root>,
     children: [
       { path: "/", element: <Home></Home> },
-      { path: "/explore-gardeners", element: <h1>Explore Gardeners</h1> },
+      { path: "/explore-gardeners", element: <ExploreGardeners></ExploreGardeners> },
       { path: "/browse-tips", element: <BrowseTips></BrowseTips> },
       { path: "/share-tip", element: <PrivateRoute><ShareTip></ShareTip></PrivateRoute> },
       { path: "/my-tips", element: <PrivateRoute><MyTips></MyTips></PrivateRoute> },
