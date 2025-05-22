@@ -4,11 +4,12 @@ import Login from "../components/Login/Login";
 import Register from "../components/Register/Register";
 import PrivateRoute from "./PrivateRoute";
 // import ShareTip from "../components/ShareTip/ShareTip";
-import MyTips from "../components/MyTips/MyTips";
+// import MyTips from "../components/MyTips/MyTips";
 import Home from "../pages/Home/Home";
 import ShareTip from "../pages/ShareTip/ShareTip";
 import BrowseTips from "../pages/BrowseTips/BrowseTips";
 import TipDetails from "../pages/TipDetails/TipDetails";
+import MyTips from "../pages/MyTips/MyTips";
 // import App from "../App";
 
 
