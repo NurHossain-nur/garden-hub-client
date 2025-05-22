@@ -8,6 +8,7 @@ import MyTips from "../components/MyTips/MyTips";
 import Home from "../pages/Home/Home";
 import ShareTip from "../pages/ShareTip/ShareTip";
 import BrowseTips from "../pages/BrowseTips/BrowseTips";
+import TipDetails from "../pages/TipDetails/TipDetails";
 // import App from "../App";
 
 
@@ -24,6 +25,7 @@ const router = createBrowserRouter([
       { path: "/my-tips", element: <PrivateRoute><MyTips></MyTips></PrivateRoute> },
       { path: "/login", element: <Login></Login> },
       { path: "/register", element: <Register></Register> },
+      { path: "/tip/:id", element: <TipDetails></TipDetails>}
     ]
   }
 ]);
