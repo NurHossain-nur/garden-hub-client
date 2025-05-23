@@ -73,7 +73,7 @@ const Navbar = () => {
           Browse Tips
         </NavLink>
       </li>
-      {/* <li>
+      <li>
         <NavLink to="/share-tip" className="hover:text-primary">
           Share a Garden Tip
         </NavLink>
@@ -82,8 +82,8 @@ const Navbar = () => {
         <NavLink to="/my-tips" className="hover:text-primary">
           My Tips
         </NavLink>
-      </li> */}
-      {user && (
+      </li>
+      {/* {user && (
         <>
           <li>
             <NavLink to="/share-tip" className="hover:text-primary">
@@ -96,7 +96,7 @@ const Navbar = () => {
             </NavLink>
           </li>
         </>
-      )}
+      )} */}
     </>
   );
 

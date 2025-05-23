@@ -32,26 +32,36 @@ const Register = () => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
+  // const validatePassword = (password) => {
+  //   if (!/[A-Z]/.test(password)) {
+  //     Swal.fire("⚠ Password must include at least one uppercase letter.");
+  //     return false;
+  //   }
+  //   if (!/[a-z]/.test(password)) {
+  //     Swal.fire("⚠ Password must include at least one lowercase letter.");
+  //     return false;
+  //   }
+  //   if (password.length < 6) {
+  //     Swal.fire("⚠ Password must be at least 6 characters long.");
+  //     return false;
+  //   }
+  //   return true;
+  // };
+
   const validatePassword = (password) => {
-    if (!/[A-Z]/.test(password)) {
-      Swal.fire("⚠ Password must include at least one uppercase letter.");
+    const regex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[^A-Za-z0-9]).{8,}$/;
+
+    if (!regex.test(password)) {
+      Swal.fire(
+        "⚠ Weak Password",
+        "Password must be at least 8 characters, and include 1 uppercase, 1 lowercase, and 1 special character.",
+        "warning"
+      );
       return false;
     }
-    if (!/[a-z]/.test(password)) {
-      Swal.fire("⚠ Password must include at least one lowercase letter.");
-      return false;
-    }
-    if (password.length < 6) {
-      Swal.fire("⚠ Password must be at least 6 characters long.");
-      return false;
-    }
+
     return true;
   };
-
-  //   const validatePassword = (password) => {
-  //     const re = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\W).{8,}$/;
-  //     return re.test(password);
-  //   };
 
   const handleRegister = (e) => {
     e.preventDefault();
