@@ -15,7 +15,7 @@ const BrowseTips = () => {
   }, []);
 
   return (
-    <div className="max-w-7xl mx-auto px-4 py-20">
+    <div className="max-w-7xl min-h-[550px] mx-auto px-4 py-20">
       <h2 className="text-3xl font-heading text-primary mb-6 text-center">
         🌿 Public Garden Tips
       </h2>

@@ -80,7 +80,7 @@ const MyTips = () => {
   };
 
   return (
-    <div className="max-w-7xl mx-auto px-4 py-20">
+    <div className="max-w-7xl min-h-[550px] mx-auto px-4 py-20">
       <h2 className="text-3xl font-heading text-primary mb-6 text-center">My Garden Tips</h2>
       <div className="overflow-x-auto">
         <table className="table table-zebra w-full">
@@ -106,18 +106,18 @@ const MyTips = () => {
                     className="w-16 h-12 rounded"
                   />
                 </td>
-                <td className="space-x-2">
+                <td className="space-y-2 sm:space-y-0 sm:space-x-2 ">
                   <button
                     onClick={() => setSelectedTip(tip)}
                     className="btn btn-sm btn-primary"
                   >
-                    ✏️ Update
+                     Update
                   </button>
                   <button
                     onClick={() => handleDelete(tip._id)}
                     className="btn btn-sm btn-error"
                   >
-                    🗑️ Delete
+                     Delete
                   </button>
                 </td>
               </tr>

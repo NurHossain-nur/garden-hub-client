@@ -6,12 +6,12 @@ import Swal from "sweetalert2";
 import { AuthContext } from "../../provider/AuthProvider";
 
 const Login = () => {
-//   const { signIn, signInWithGoogle } = useContext(AuthContext);
-const { signIn, setUser, googleSignIn } = useContext(AuthContext);
+  //   const { signIn, signInWithGoogle } = useContext(AuthContext);
+  const { signIn, setUser, googleSignIn } = useContext(AuthContext);
   const navigate = useNavigate();
   const location = useLocation();
 
-//   const from = location.state?.from?.pathname || "/";
+  const from = location.state?.from?.pathname || "/";
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -30,10 +30,13 @@ const { signIn, setUser, googleSignIn } = useContext(AuthContext);
         setUser(user);
         toast.success("Login successful!");
         // navigate(from, { replace: true });
+        // setTimeout(() => {
+        //     navigate(`${location.state ? location.state : "/"}`);
+        //     // navigate(location.state || "/");
+        //   }, 1500);
         setTimeout(() => {
-            navigate(`${location.state ? location.state : "/"}`);
-            // navigate(location.state || "/");
-          }, 1500);
+          navigate(from, { replace: true });
+        }, 1500);
       })
       .catch((error) => {
         Swal.fire("Login Failed", error.message, "error");
@@ -44,9 +47,9 @@ const { signIn, setUser, googleSignIn } = useContext(AuthContext);
     googleSignIn()
       .then(() => {
         toast.success("Google Login successful!");
-        // navigate(from, { replace: true });
         setTimeout(() => {
-          navigate(`${location.state ? location.state : "/"}`);
+          navigate(from, { replace: true });
+          // navigate(`${location.state ? location.state : "/"}`);
           // navigate(location.state || "/");
         }, 1500);
       })
@@ -58,7 +61,9 @@ const { signIn, setUser, googleSignIn } = useContext(AuthContext);
   return (
     <div className="min-h-screen flex items-center justify-center bg-base-100 p-4 font-sans">
       <div className="w-full max-w-md p-6 bg-neutral rounded-lg shadow-lg">
-        <h2 className="text-4xl font-heading mb-6 text-primary text-center">Login</h2>
+        <h2 className="text-4xl font-heading mb-6 text-primary text-center">
+          Login
+        </h2>
         <form onSubmit={handleLogin} className="space-y-5">
           <input
             type="email"

@@ -30,9 +30,9 @@ const ToolShowcase = () => {
       <Slide cascade direction="left">
         <div className="text-center mb-10">
           <h2 className="text-4xl font-heading text-primary">🛠 Gardening Tool Showcase</h2>
-          <p className="text-base font-sans text-muted mt-2">Discover the tools that make your garden grow better</p>
+          <p className="text-secondary font-sans text-muted mt-2">Discover the tools that make your garden grow better</p>
         </div>
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+        <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-6">
           {tools.map((tool, index) => (
             <div key={index} className="p-4 bg-base-200 rounded-xl hover:scale-105 transition duration-300 shadow">
               <img src={tool.img} alt={tool.name} className="w-full h-32 object-contain mb-4" />
