@@ -11,6 +11,7 @@ import BrowseTips from "../pages/BrowseTips/BrowseTips";
 import TipDetails from "../pages/TipDetails/TipDetails";
 import MyTips from "../pages/MyTips/MyTips";
 import ExploreGardeners from "../pages/ExploreGardeners/ExploreGardeners";
+import NotFound from "../pages/NotFound/NotFound";
 // import App from "../App";
 
 
@@ -29,6 +30,10 @@ const router = createBrowserRouter([
       { path: "/register", element: <Register></Register> },
       { path: "/tip/:id", element: <TipDetails></TipDetails>}
     ]
+  },
+  {
+    path: "*",
+    element: <NotFound></NotFound>
   }
 ]);
 

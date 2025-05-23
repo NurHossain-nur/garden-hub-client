@@ -182,7 +182,7 @@ const MyTips = () => {
                 className="textarea textarea-bordered w-full"
               />
 
-              <p className="text-sm text-gray-500">
+              <p className="text-sm text-secondary">
                 By {user.displayName} ({user.email})
               </p>
               <div className="modal-action">
