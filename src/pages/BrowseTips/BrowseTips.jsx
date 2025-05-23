@@ -1,7 +1,10 @@
 import { useEffect, useState } from "react";
+import { ImSpinner3 } from "react-icons/im";
 import { Link } from "react-router";
 
+
 const BrowseTips = () => {
+  const [loading, setLoading] = useState(true);
   const [tips, setTips] = useState([]);
 
   useEffect(() => {
@@ -10,9 +13,19 @@ const BrowseTips = () => {
       .then((data) => {
         console.log("data",data);
         setTips(data);
+        setLoading(false);
       })
       .catch((err) => console.error(err));
+      setLoading(false);
   }, []);
+
+  if (loading) {
+    return (
+      <div className="flex justify-center items-center min-h-screen">
+              <ImSpinner3 className="text-5xl animate-spin text-primary" />
+            </div>
+    );
+  }
 
   return (
     <div className="max-w-7xl min-h-[550px] mx-auto px-4 py-20">

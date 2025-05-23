@@ -1,15 +1,31 @@
 import { useEffect, useState } from "react";
 import { Fade } from "react-awesome-reveal";
+import { ImSpinner3 } from "react-icons/im";
 
 const ExploreGardeners = () => {
+  const [loading, setLoading] = useState(true);
   const [gardeners, setGardeners] = useState([]);
 
   useEffect(() => {
     fetch("http://localhost:5000/gardeners")
-      .then(res => res.json())
-      .then(data => setGardeners(data))
-      .catch(err => console.error(err));
+      .then((res) => res.json())
+      .then((data) => {
+        setGardeners(data);
+        setLoading(false);
+      })
+      .catch((err) => {
+        console.error(err);
+        setLoading(false);
+      });
   }, []);
+
+  if (loading) {
+    return (
+      <div className="flex justify-center items-center min-h-screen">
+        <ImSpinner3 className="text-5xl animate-spin text-primary" />
+      </div>
+    );
+  }
 
   return (
     <div className="max-w-7xl min-h-[550px] mx-auto px-4 my-20 font-sans text-base-content">
