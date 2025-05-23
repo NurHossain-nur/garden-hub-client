@@ -5,22 +5,22 @@ const ExploreGardeners = () => {
   const [gardeners, setGardeners] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:5000/gardeners") // no limit to get all
+    fetch("http://localhost:5000/gardeners")
       .then(res => res.json())
       .then(data => setGardeners(data))
       .catch(err => console.error(err));
   }, []);
 
   return (
-    <div className="max-w-7xl mx-auto px-4 my-20">
-      <h2 className="text-4xl font-extrabold text-center text-green-600 dark:text-green-400 mb-12">
+    <div className="max-w-7xl mx-auto px-4 my-20 font-sans text-base-content">
+      <h2 className="text-4xl font-heading text-primary text-center mb-12">
         🔍 Explore Gardeners
       </h2>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
         {gardeners.map((gardener, idx) => (
           <Fade key={idx} triggerOnce>
-            <div className="bg-white dark:bg-neutral h-full border border-gray-300 dark:border-gray-700 rounded-2xl shadow-md hover:shadow-2xl transition duration-300 overflow-hidden">
+            <div className="bg-white/60 border h-full border-border rounded-2xl shadow-md hover:shadow-xl transition duration-300 overflow-hidden">
               <img
                 src={gardener.image}
                 alt={gardener.name}
@@ -29,34 +29,31 @@ const ExploreGardeners = () => {
 
               <div className="p-6 space-y-2">
                 <div className="flex justify-between items-center mb-2">
-                  <h3 className="text-2xl font-bold text-primary">
+                  <h3 className="text-2xl font-heading text-primary">
                     {gardener.name}
                   </h3>
                   <span
-                    className={`badge ${
+                    className={`badge px-3 py-1 text-white font-medium ${
                       gardener.status === "public"
-                        ? "badge-success"
-                        : "badge-warning"
-                    } text-white capitalize`}
+                        ? "bg-success"
+                        : "bg-secondary"
+                    } capitalize`}
                   >
                     {gardener.status}
                   </span>
                 </div>
 
-                <p className="text-sm text-gray-600 dark:text-gray-300">
-                  🌍 Location: {gardener.location}
-                </p>
-                <p className="text-sm text-gray-600 dark:text-gray-300">
+                <p className="text-sm text-muted">
                   👤 Age: {gardener.age} | Gender: {gardener.gender}
                 </p>
-                <p className="text-sm text-green-700 dark:text-green-400">
+                <p className="text-sm text-accent">
                   🌿 Experience: {gardener.experiences}
                 </p>
-                <p className="text-sm text-purple-700 dark:text-purple-400 font-medium">
+                <p className="text-sm text-secondary font-semibold">
                   📝 Total Shared Tips: {gardener.totalSharedTips}
                 </p>
 
-                <p className="text-sm text-gray-700 dark:text-gray-400 mt-2">
+                <p className="text-sm text-base-content mt-2 leading-relaxed">
                   {gardener.bio.length > 120
                     ? gardener.bio.slice(0, 120) + "..."
                     : gardener.bio}

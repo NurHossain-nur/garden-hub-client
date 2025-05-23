@@ -33,7 +33,7 @@ const Banner = () => {
   ];
 
   return (
-    <div className="w-full">
+    <div className="max-w-7xl mx-auto px-4 my-10 py-10">
       <Swiper
         spaceBetween={30}
         centeredSlides={true}

@@ -13,7 +13,7 @@ const TopTrendingTips = () => {
   }, []);
 
   return (
-    <div className="max-w-6xl mx-auto my-20 px-4">
+    <div className="max-w-7xl mx-auto my-20 px-4">
       <h2 className="text-4xl font-heading text-center mb-12">
         🔥 Top Trending Tips
       </h2>

@@ -15,15 +15,15 @@ const BrowseTips = () => {
   }, []);
 
   return (
-    <div className="p-4 lg:p-10">
-      <h2 className="text-2xl md:text-3xl font-bold text-center mb-6">
+    <div className="max-w-7xl mx-auto px-4 py-20">
+      <h2 className="text-3xl font-heading text-primary mb-6 text-center">
         🌿 Public Garden Tips
       </h2>
 
       <div className="overflow-x-auto">
         <table className="table table-zebra w-full">
-          <thead>
-            <tr className="bg-base-200 text-base-content">
+          <thead className="bg-base-300 text-base-content">
+            <tr>
               <th>#</th>
               <th>Title</th>
               <th>Category</th>

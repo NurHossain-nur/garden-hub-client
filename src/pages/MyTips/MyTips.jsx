@@ -80,11 +80,11 @@ const MyTips = () => {
   };
 
   return (
-    <div className="p-4 md:p-10">
-      <h2 className="text-2xl font-bold mb-4">My Garden Tips</h2>
+    <div className="max-w-7xl mx-auto px-4 py-20">
+      <h2 className="text-3xl font-heading text-primary mb-6 text-center">My Garden Tips</h2>
       <div className="overflow-x-auto">
         <table className="table table-zebra w-full">
-          <thead>
+          <thead className="bg-base-300 text-base-content">
             <tr>
               <th>Title</th>
               <th>Category</th>

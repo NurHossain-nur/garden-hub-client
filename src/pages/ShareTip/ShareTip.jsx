@@ -55,7 +55,7 @@ const ShareTip = () => {
   };
 
   return (
-    <section className="px-4 md:px-12 py-12">
+    <section className="max-w-7xl mx-auto px-4 py-20">
       <h2 className="text-3xl font-heading text-center mb-6 text-primary"> Share a Garden Tip</h2>
 
       <form onSubmit={handleSubmit} className="grid grid-cols-1 md:grid-cols-2 gap-6 bg-base-200 p-8 rounded-xl shadow">

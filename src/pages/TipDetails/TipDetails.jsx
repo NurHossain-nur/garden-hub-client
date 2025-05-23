@@ -38,11 +38,16 @@ const TipDetails = () => {
       });
   };
 
-  if (loading) return <p className="text-center mt-10 text-xl font-medium">Loading...</p>;
+  if (loading)
+    return (
+      <p className="text-center mt-10 text-xl font-medium font-sans text-base-content">
+        Loading...
+      </p>
+    );
 
   return (
-    <div className="p-4 md:p-10 max-w-6xl mx-auto">
-      <div className="bg-base-100 shadow-xl rounded-2xl overflow-hidden animate-fadeIn">
+    <div className="p-4 max-w-7xl mx-auto mt-10 mb-20 font-sans text-base-content">
+      <div className="bg-white/70 backdrop-blur-sm shadow-lg rounded-2xl overflow-hidden animate-fadeIn border border-border">
         <img
           src={tip.image}
           alt={tip.title}
@@ -50,11 +55,11 @@ const TipDetails = () => {
         />
 
         <div className="p-6 md:p-10 space-y-6">
-          <h2 className="text-3xl md:text-4xl font-bold text-center text-green-600 ">
+          <h2 className="text-4xl md:text-5xl font-heading text-center text-primary">
             {tip.title}
           </h2>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-gray-800 ">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-neutral">
             <InfoItem icon={<FaLeaf />} label="Plant Type" value={tip.topic} />
             <InfoItem icon={<FaSeedling />} label="Difficulty" value={tip.difficulty} />
             <InfoItem icon={<FaTag />} label="Category" value={tip.category} />
@@ -62,9 +67,9 @@ const TipDetails = () => {
             <InfoItem icon={<FaUser />} label="Author" value={`${tip.userName} (${tip.userEmail})`} />
           </div>
 
-            <h3 className="text-xl font-semibold mb-2 text-green-700 ">Description</h3>
-          <div className="bg-base-200 p-5 rounded-xl shadow-inner">
-            <p className="text-justify leading-relaxed text-gray-700 ">
+          <h3 className="text-2xl font-heading text-secondary">Description</h3>
+          <div className="bg-base-200 p-5 rounded-xl shadow-inner border border-border">
+            <p className="text-justify leading-relaxed text-muted">
               {tip.description}
             </p>
           </div>
@@ -73,13 +78,13 @@ const TipDetails = () => {
             <button
               onClick={handleLike}
               disabled={liked}
-              className={`btn ${liked ? "btn-disabled" : "btn-success"} gap-2 text-white text-base px-6`}
+              className={`btn ${liked ? "btn-disabled" : "bg-primary hover:bg-accent"} text-white text-base px-6 gap-2`}
             >
               <FaThumbsUp />
               {liked ? "Liked" : "Like this tip"}
             </button>
 
-            <p className="text-lg font-semibold text-green-800 ">
+            <p className="text-lg font-semibold text-secondary font-sans">
               Total Likes: {tip.totalLiked || 0}
             </p>
           </div>
@@ -92,7 +97,7 @@ const TipDetails = () => {
 // Reusable info block
 const InfoItem = ({ icon, label, value }) => (
   <p className="flex items-start gap-2">
-    <span className="text-green-600 text-xl">{icon}</span>
+    <span className="text-primary text-xl">{icon}</span>
     <span>
       <span className="font-semibold">{label}:</span> {value}
     </span>

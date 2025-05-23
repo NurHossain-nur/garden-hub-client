@@ -9,10 +9,13 @@ const Home = () => {
     return (
         <div>
             <Banner></Banner>
-            <FeaturedGardeners></FeaturedGardeners>
+            <div className='bg-white py-5'>
+                <FeaturedGardeners></FeaturedGardeners>
+            </div>
             <TopTrendingTips></TopTrendingTips>
             <SeasonalGuide></SeasonalGuide>
             <ToolShowcase></ToolShowcase>
+
         </div>
     );
 };
