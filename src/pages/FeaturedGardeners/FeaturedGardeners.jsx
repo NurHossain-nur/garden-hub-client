@@ -20,7 +20,7 @@ const FeaturedGardeners = () => {
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {gardeners.map((gardener, idx) => (
           <Fade key={idx} triggerOnce>
-            <div className="bg-base-100 border border-border rounded-2xl shadow-lg hover:shadow-xl transition duration-300">
+            <div className="bg-base-100 h-full border border-border rounded-2xl shadow-lg hover:shadow-xl transition duration-300">
               <figure className="relative">
                 <img
                   src={gardener.image}

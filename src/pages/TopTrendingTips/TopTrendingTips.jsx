@@ -6,11 +6,16 @@ const TopTrendingTips = () => {
   const [tips, setTips] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:5000/gardentips?availability=public&limit=6")
-      .then((res) => res.json())
-      .then((data) => setTips(data))
-      .catch((err) => console.error(err));
-  }, []);
+  fetch("http://localhost:5000/gardentips?availability=public")
+    .then((res) => res.json())
+    .then((data) => {
+      const sorted = data
+        .sort((a, b) => (b.totalLiked || 0) - (a.totalLiked || 0)) // sort by likes
+        .slice(0, 6); // take top 6
+      setTips(sorted);
+    })
+    .catch((err) => console.error(err));
+}, []);
 
   return (
     <div className="max-w-7xl mx-auto my-20 px-4">
