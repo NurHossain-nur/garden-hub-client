@@ -87,7 +87,7 @@ const MyTips = () => {
   };
 
   return (
-    <div className="max-w-7xl min-h-[550px] mx-auto px-4 py-20">
+    <div className="max-w-7xl min-h-[650px] mx-auto mt-6 px-4 py-20">
       <h2 className="text-3xl font-heading text-primary mb-6 text-center">
         My Garden Tips
       </h2>
@@ -139,7 +139,7 @@ const MyTips = () => {
       {selectedTip && (
         <dialog id="updateModal" open className="modal">
           <div className="modal-box">
-            <h3 className="font-bold text-lg">Update Tip</h3>
+            <h3 className="font-bold text-lg mb-2 font-heading">Update Tip</h3>
             <form onSubmit={handleUpdate} className="space-y-2">
               <input
                 name="title"
@@ -195,13 +195,13 @@ const MyTips = () => {
                 By {user.displayName} ({user.email})
               </p>
               <div className="modal-action">
-                <button type="submit" className="btn btn-success w-full">
+                <button type="submit" className="btn btn-success ">
                   Update
                 </button>
                 <button
                   type="button"
                   onClick={() => setSelectedTip(null)}
-                  className="btn w-full"
+                  className="btn "
                 >
                   Close
                 </button>

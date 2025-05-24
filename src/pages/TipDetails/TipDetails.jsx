@@ -53,7 +53,7 @@ const TipDetails = () => {
     );
 
   return (
-    <div className="p-4 max-w-7xl mx-auto mt-10 mb-20 font-sans text-base-content">
+    <div className="p-4 max-w-7xl mx-auto mt-20 mb-20 font-sans text-base-content">
       <div className="bg-white/70 backdrop-blur-sm shadow-lg rounded-2xl overflow-hidden animate-fadeIn border border-border">
         <img
           src={tip.image}
