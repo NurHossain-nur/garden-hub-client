@@ -1,12 +1,50 @@
 # React + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# 🌿 GardenHub - Gardening Community & Resource Hub
 
-Currently, two official plugins are available:
+## 🔗 Live Site
+[https://garden-hub-f812a.web.app/](https://garden-hub-f812a.web.app/)  
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🚀 Project Description
+**GardenHub** is a (full-stack) gardening community platform where users can share tips, explore gardening advice, and connect with fellow enthusiasts. Designed with a focus on user experience, dynamic content, and responsive design, it aims to promote eco-friendly knowledge sharing.
+
+---
+
+## ✅ Key Features
+
+- 🔐 **User Authentication**  
+  Register/login using email/password or Google. Firebase handles secure auth and protected routes.
+
+- 🪴 **Dynamic Tip Sharing System**  
+  Users can add, update, delete, and view gardening tips, sorted by popularity (likes).
+
+- 🌱 **Featured Gardeners & Top Tips**  
+  Home page dynamically loads trending tips and featured gardeners from MongoDB.
+
+- 🎨 **Dark/Light Theme Toggle**  
+  Fully integrated theme switcher with consistent UI support across all pages.
+
+- ✨ **Responsive UI with Enhanced UX**  
+  Built using Tailwind CSS, DaisyUI, and React for seamless experience on all devices.
+
+- ⚙️ **Role-based UI Protection**  
+  Protected routes like "My Tips" ensure only the respective user can manage their data.
+
+---
+
+## 🛠️ Tech Stack
+
+- **Frontend:** React, Tailwind CSS, DaisyUI, React Router, SweetAlert2, React Toastify, AOS/SwiperJS  
+- **Backend:** Node.js, Express.js, MongoDB  
+- **Authentication:** Firebase Authentication  
+- **Deployment:** Firebase (Client), Vercel (Server)
+
+---
+
+## 👨‍💻 Developed by
+**Nur Hossain**  
+📧 Email: [nurhossain6434@gmail.com](mailto:nurhossain6434@gmail.com)  
+🌐 GitHub: [https://github.com/NurHossain-nur](https://github.com/NurHossain-nur)
