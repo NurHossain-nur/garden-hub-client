@@ -17,7 +17,7 @@ const Navbar = () => {
   //       .then(() => setShowLogout(false))
   //       .catch((err) => console.error(err));
   //   };
-  console.log(showLogout);
+  // console.log(showLogout);
 
   const handleLogout = () => {
     Swal.fire({
