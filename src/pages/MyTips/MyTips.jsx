@@ -186,13 +186,13 @@ const MyTips = () => {
                 By {user.displayName} ({user.email})
               </p>
               <div className="modal-action">
-                <button type="submit" className="btn btn-success">
+                <button type="submit" className="btn btn-success w-full">
                   Update
                 </button>
                 <button
                   type="button"
                   onClick={() => setSelectedTip(null)}
-                  className="btn"
+                  className="btn w-full"
                 >
                   Close
                 </button>

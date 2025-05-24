@@ -93,7 +93,7 @@ const BrowseTips = () => {
                 <td>
                   <Link
                     to={`/tip/${tip._id}`}
-                    className="btn btn-sm btn-accent text-white"
+                    className="btn btn-sm btn-accent text-white text-nowrap"
                   >
                     👁️ See More
                   </Link>

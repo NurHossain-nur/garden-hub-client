@@ -59,30 +59,66 @@ const Navbar = () => {
   const navLinks = (
     <>
       <li>
-        <NavLink to="/" className="hover:text-primary">
+        <NavLink
+          to="/"
+          className={({ isActive }) =>
+            isActive
+              ? "text-primary font-semibold underline"
+              : "hover:text-primary"
+          }
+        >
           Home
         </NavLink>
       </li>
       <li>
-        <NavLink to="/explore-gardeners" className="hover:text-primary">
+        <NavLink
+          to="/explore-gardeners"
+          className={({ isActive }) =>
+            isActive
+              ? "text-primary font-semibold underline"
+              : "hover:text-primary"
+          }
+        >
           Explore Gardeners
         </NavLink>
       </li>
       <li>
-        <NavLink to="/browse-tips" className="hover:text-primary">
+        <NavLink
+          to="/browse-tips"
+          className={({ isActive }) =>
+            isActive
+              ? "text-primary font-semibold underline"
+              : "hover:text-primary"
+          }
+        >
           Browse Tips
         </NavLink>
       </li>
       <li>
-        <NavLink to="/share-tip" className="hover:text-primary">
+        <NavLink
+          to="/share-tip"
+          className={({ isActive }) =>
+            isActive
+              ? "text-primary font-semibold underline"
+              : "hover:text-primary"
+          }
+        >
           Share a Garden Tip
         </NavLink>
       </li>
       <li>
-        <NavLink to="/my-tips" className="hover:text-primary">
+        <NavLink
+          to="/my-tips"
+          className={({ isActive }) =>
+            isActive
+              ? "text-primary font-semibold underline"
+              : "hover:text-primary"
+          }
+        >
           My Tips
         </NavLink>
       </li>
+
       {/* {user && (
         <>
           <li>
@@ -113,7 +149,7 @@ const Navbar = () => {
   // };
 
   return (
-    <nav className="bg-base-200 shadow-md font-sans sticky top-0 z-50">
+    <nav className="bg-base-200 shadow-md font-sans w-full fixed top-0 left-0 z-50">
       <div className="navbar max-w-7xl mx-auto px-4">
         {/* Left: Logo */}
         <div className="navbar-start">
@@ -130,7 +166,21 @@ const Navbar = () => {
         </div>
 
         {/* Right: Auth or User */}
-        <div className="navbar-end">
+        <div className="navbar-end space-x-2">
+          <button
+            onClick={() => {
+              const html = document.documentElement;
+              const currentTheme = html.getAttribute("data-theme");
+              const newTheme = currentTheme === "dark" ? "light" : "dark";
+              html.setAttribute("data-theme", newTheme);
+              localStorage.setItem("theme", newTheme);
+            }}
+            className="btn btn-ghost btn-sm bg-primary rounded-full"
+            title="Toggle Theme"
+          >
+            🌓
+          </button>
+
           {!user ? (
             <Link
               to="/login"
@@ -140,25 +190,11 @@ const Navbar = () => {
             </Link>
           ) : (
             <div
-              className="relative z-[9999] flex justify-center items-center gap-2"
+              className="relative z-[9999] "
               tabIndex={0}
               //   onBlur={() => setShowLogout(false)}
             >
               {/* Toggle Dark and Light Theme */}
-
-              <button
-                onClick={() => {
-                  const html = document.documentElement;
-                  const currentTheme = html.getAttribute("data-theme");
-                  const newTheme = currentTheme === "dark" ? "light" : "dark";
-                  html.setAttribute("data-theme", newTheme);
-                  localStorage.setItem("theme", newTheme);
-                }}
-                className="btn btn-ghost btn-sm bg-primary rounded-full"
-                title="Toggle Theme"
-              >
-                🌓
-              </button>
 
               <div
                 onClick={() => setShowLogout(!showLogout)}
@@ -176,7 +212,7 @@ const Navbar = () => {
               {showLogout && (
                 <button
                   onClick={handleLogout}
-                  className="absolute right-0 mt-20 px-4 py-2 bg-primary text-white rounded shadow-md pointer-coarse: z-[999]"
+                  className="absolute right-0 mt-2 px-4 py-2 bg-primary text-white rounded shadow-md pointer-coarse: z-[999]"
                 >
                   Logout
                 </button>

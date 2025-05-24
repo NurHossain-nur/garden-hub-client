@@ -20,7 +20,7 @@ const SeasonalGuide = () => {
             <button className="btn btn-outline btn-accent mt-4">Explore Full Guide</button>
           </div>
           <img
-            src="https://i.ibb.co/yYdVLjB/spring-garden.jpg"
+            src="https://i.ibb.co/Z6c1G0nK/Leonardo-Kino-XL-a-garden-image-like-sessional-garden-guide-0.jpg"
             className="rounded-2xl object-cover w-full h-72"
             alt="Spring Gardening"
           />
