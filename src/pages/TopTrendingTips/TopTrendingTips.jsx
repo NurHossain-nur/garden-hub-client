@@ -6,16 +6,18 @@ const TopTrendingTips = () => {
   const [tips, setTips] = useState([]);
 
   useEffect(() => {
-  fetch("http://localhost:5000/gardentips?availability=public")
-    .then((res) => res.json())
-    .then((data) => {
-      const sorted = data
-        .sort((a, b) => (b.totalLiked || 0) - (a.totalLiked || 0)) // sort by likes
-        .slice(0, 6); // take top 6
-      setTips(sorted);
-    })
-    .catch((err) => console.error(err));
-}, []);
+    fetch(
+      "https://garden-hub-server-three.vercel.app/gardentips?availability=public"
+    )
+      .then((res) => res.json())
+      .then((data) => {
+        const sorted = data
+          .sort((a, b) => (b.totalLiked || 0) - (a.totalLiked || 0)) // sort by likes
+          .slice(0, 6); // take top 6
+        setTips(sorted);
+      })
+      .catch((err) => console.error(err));
+  }, []);
 
   return (
     <div className="max-w-7xl mx-auto my-20 px-4">
@@ -30,7 +32,9 @@ const TopTrendingTips = () => {
                 <h3 className="text-2xl font-bold mb-2 text-green-700">
                   {tip.title}
                 </h3>
-                <p className="text-gray-600 mb-4 line-clamp-4">{tip.description}</p>
+                <p className="text-gray-600 mb-4 line-clamp-4">
+                  {tip.description}
+                </p>
                 <p className="text-sm text-gray-500 italic">
                   Shared by: {tip.userName || "Unknown"}
                 </p>

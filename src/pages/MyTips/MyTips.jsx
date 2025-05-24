@@ -15,7 +15,9 @@ const MyTips = () => {
   // Fetch user tips
   useEffect(() => {
     if (user?.email) {
-      fetch(`http://localhost:5000/gardentips?userEmail=${user.email}`)
+      fetch(
+        `https://garden-hub-server-three.vercel.app/gardentips?userEmail=${user.email}`
+      )
         .then((res) => res.json())
         .then((data) => {
           // console.log(data)
@@ -34,7 +36,7 @@ const MyTips = () => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:5000/gardentips/${id}`, {
+        fetch(`https://garden-hub-server-three.vercel.app/gardentips/${id}`, {
           method: "DELETE",
         })
           .then((res) => res.json())
@@ -63,17 +65,22 @@ const MyTips = () => {
       availability: form.availability.value,
     };
 
-    fetch(`http://localhost:5000/gardentips/${selectedTip._id}`, {
-      method: "PATCH",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(updatedTip),
-    })
+    fetch(
+      `https://garden-hub-server-three.vercel.app/gardentips/${selectedTip._id}`,
+      {
+        method: "PATCH",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(updatedTip),
+      }
+    )
       .then((res) => res.json())
       .then(() => {
         toast.success("Tip updated successfully!");
         setSelectedTip(null);
         // Refresh tips list
-        fetch(`http://localhost:5000/gardentips?userEmail=${user.email}`)
+        fetch(
+          `https://garden-hub-server-three.vercel.app/gardentips?userEmail=${user.email}`
+        )
           .then((res) => res.json())
           .then((data) => setTips(data));
       });
@@ -81,7 +88,9 @@ const MyTips = () => {
 
   return (
     <div className="max-w-7xl min-h-[550px] mx-auto px-4 py-20">
-      <h2 className="text-3xl font-heading text-primary mb-6 text-center">My Garden Tips</h2>
+      <h2 className="text-3xl font-heading text-primary mb-6 text-center">
+        My Garden Tips
+      </h2>
       <div className="overflow-x-auto">
         <table className="table table-zebra w-full">
           <thead className="bg-base-300 text-base-content">
@@ -111,13 +120,13 @@ const MyTips = () => {
                     onClick={() => setSelectedTip(tip)}
                     className="btn btn-sm btn-primary"
                   >
-                     Update
+                    Update
                   </button>
                   <button
                     onClick={() => handleDelete(tip._id)}
                     className="btn btn-sm btn-error"
                   >
-                     Delete
+                    Delete
                   </button>
                 </td>
               </tr>

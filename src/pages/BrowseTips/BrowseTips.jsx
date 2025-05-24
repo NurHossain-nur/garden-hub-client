@@ -10,7 +10,9 @@ const BrowseTips = () => {
 
   useEffect(() => {
     setLoading(true); // move here
-    fetch("http://localhost:5000/gardentips?availability=public")
+    fetch(
+      "https://garden-hub-server-three.vercel.app/gardentips?availability=public"
+    )
       .then((res) => res.json())
       .then((data) => {
         setTips(data);
@@ -31,7 +33,9 @@ const BrowseTips = () => {
     if (level === "all") {
       setFilteredTips(tips);
     } else {
-      const filtered = tips.filter((tip) => tip.difficulty?.toLowerCase() === level);
+      const filtered = tips.filter(
+        (tip) => tip.difficulty?.toLowerCase() === level
+      );
       setFilteredTips(filtered);
     }
   };

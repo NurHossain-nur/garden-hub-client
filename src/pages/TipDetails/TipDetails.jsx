@@ -1,7 +1,14 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router";
 import { toast } from "react-toastify";
-import { FaThumbsUp, FaLeaf, FaTag, FaUser, FaLock, FaSeedling } from "react-icons/fa";
+import {
+  FaThumbsUp,
+  FaLeaf,
+  FaTag,
+  FaUser,
+  FaLock,
+  FaSeedling,
+} from "react-icons/fa";
 
 const TipDetails = () => {
   const { id } = useParams();
@@ -10,7 +17,7 @@ const TipDetails = () => {
   const [liked, setLiked] = useState(false);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/gardentips/${id}`)
+    fetch(`https://garden-hub-server-three.vercel.app/gardentips/${id}`)
       .then((res) => res.json())
       .then((data) => {
         setTip(data);
@@ -21,7 +28,7 @@ const TipDetails = () => {
   const handleLike = () => {
     if (liked) return toast.warn("You already liked this tip!");
 
-    fetch(`http://localhost:5000/gardentips/like/${id}`, {
+    fetch(`https://garden-hub-server-three.vercel.app/gardentips/like/${id}`, {
       method: "PATCH",
     })
       .then((res) => res.json())
@@ -61,10 +68,22 @@ const TipDetails = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-neutral">
             <InfoItem icon={<FaLeaf />} label="Plant Type" value={tip.topic} />
-            <InfoItem icon={<FaSeedling />} label="Difficulty" value={tip.difficulty} />
+            <InfoItem
+              icon={<FaSeedling />}
+              label="Difficulty"
+              value={tip.difficulty}
+            />
             <InfoItem icon={<FaTag />} label="Category" value={tip.category} />
-            <InfoItem icon={<FaLock />} label="Availability" value={tip.availability} />
-            <InfoItem icon={<FaUser />} label="Author" value={`${tip.userName} (${tip.userEmail})`} />
+            <InfoItem
+              icon={<FaLock />}
+              label="Availability"
+              value={tip.availability}
+            />
+            <InfoItem
+              icon={<FaUser />}
+              label="Author"
+              value={`${tip.userName} (${tip.userEmail})`}
+            />
           </div>
 
           <h3 className="text-2xl font-heading text-secondary">Description</h3>
@@ -78,7 +97,9 @@ const TipDetails = () => {
             <button
               onClick={handleLike}
               disabled={liked}
-              className={`btn ${liked ? "btn-disabled" : "bg-primary hover:bg-accent"} text-white text-base px-6 gap-2`}
+              className={`btn ${
+                liked ? "btn-disabled" : "bg-primary hover:bg-accent"
+              } text-white text-base px-6 gap-2`}
             >
               <FaThumbsUp />
               {liked ? "Liked" : "Like this tip"}
