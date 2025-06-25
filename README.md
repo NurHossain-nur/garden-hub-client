@@ -44,7 +44,22 @@
 
 ---
 
+## 📦 Dependencies
+- react-router-dom
+- sweetalert2
+- react-toastify
+- swiper
+- aos
+
 ## 👨‍💻 Developed by
 **Nur Hossain**  
 📧 Email: [nurhossain6434@gmail.com](mailto:nurhossain6434@gmail.com)  
 🌐 GitHub: [https://github.com/NurHossain-nur](https://github.com/NurHossain-nur)
+
+## 🧪 Run Locally
+
+```bash
+git clone https://github.com/NurHossain-nur/garden-hub-client.git
+cd garden-hub-client
+npm install
+npm run dev
