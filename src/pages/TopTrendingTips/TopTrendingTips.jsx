@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { FaRegThumbsUp } from "react-icons/fa";
 import { Fade } from "react-awesome-reveal";
+import { Link } from "react-router";
 
 const TopTrendingTips = () => {
   const [tips, setTips] = useState([]);
@@ -50,6 +51,17 @@ const TopTrendingTips = () => {
           </Fade>
         ))}
       </div>
+
+      <div className="text-center mt-10">
+        <Link to="/browse-tips">
+          <button className="btn btn-primary btn-wide">
+            See All Tips
+          </button>
+        </Link>
+      </div>
+
+
+
     </div>
   );
 };

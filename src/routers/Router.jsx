@@ -15,6 +15,12 @@ import NotFound from "../pages/NotFound/NotFound";
 import AboutUs from "../pages/AboutUs/AboutUs";
 import Contact from "../pages/Contact/Contact";
 import Support from "../pages/Support/Support";
+import DashboardLayout from "../layouts/DashboardLayout";
+import Overview from "../Dashboard/Overview";
+import DashboardMyTips from "../Dashboard/DashboardMyTips";
+import AddTip from "../Dashboard/AddTip";
+import Profile from "../Dashboard/Profile";
+import AllTips from "../Dashboard/AllTips";
 // import App from "../App";
 
 
@@ -37,6 +43,17 @@ const router = createBrowserRouter([
       { path: "/support", element: <Support></Support>}
     ]
   },
+  {
+  path: "/dashboard",
+  element: <PrivateRoute><DashboardLayout /></PrivateRoute>,
+  children: [
+    { path: "/dashboard", element: <Overview /> },
+    { path: "all-tips", element: <AllTips /> },
+    { path: "my-tips", element: <DashboardMyTips /> },
+    { path: "add-tip", element: <AddTip /> },
+    { path: "profile", element: <Profile /> }
+  ]
+},
   {
     path: "*",
     element: <NotFound></NotFound>
