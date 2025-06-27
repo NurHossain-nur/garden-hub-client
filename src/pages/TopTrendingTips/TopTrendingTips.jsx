@@ -6,9 +6,7 @@ const TopTrendingTips = () => {
   const [tips, setTips] = useState([]);
 
   useEffect(() => {
-    fetch(
-      "https://garden-hub-server-three.vercel.app/gardentips?availability=public"
-    )
+    fetch("http://localhost:5000/gardentips?availability=public")
       .then((res) => res.json())
       .then((data) => {
         const sorted = data

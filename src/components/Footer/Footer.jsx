@@ -3,7 +3,7 @@ import { FaFacebookF, FaTwitter, FaInstagram, FaEnvelope } from "react-icons/fa"
 const Footer = () => {
   return (
     <footer className="bg-base-200 text-base-content border-t border-border font-sans pt-10">
-      <div className="max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-8 pb-10">
+      <div className="max-w-7xl mx-auto px-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 pb-10">
         {/* Contact Info */}
         <div>
           <h3 className="text-lg font-medium mb-3 font-heading text-primary">
@@ -21,6 +21,30 @@ const Footer = () => {
           <p>Phone: +880-1234-567890</p>
           <p>Address: Dinajpur, Bangladesh</p>
         </div>
+
+        {/* ✅ NEW SECTION: Company Info */}
+    <div>
+      <h3 className="text-lg font-medium mb-3 font-heading text-primary">
+        Company
+      </h3>
+      <ul className="space-y-1">
+        <li>
+          <a href="/about" className="hover:text-accent transition">
+            About Us
+          </a>
+        </li>
+        <li>
+          <a href="/support" className="hover:text-accent transition">
+            Support
+          </a>
+        </li>
+        <li>
+          <a href="/contact" className="hover:text-accent transition">
+            Contact
+          </a>
+        </li>
+      </ul>
+    </div>
 
         {/* Terms & Policies */}
         <div>

@@ -15,9 +15,7 @@ const MyTips = () => {
   // Fetch user tips
   useEffect(() => {
     if (user?.email) {
-      fetch(
-        `https://garden-hub-server-three.vercel.app/gardentips?userEmail=${user.email}`
-      )
+      fetch(`http://localhost:5000/gardentips?userEmail=${user.email}`)
         .then((res) => res.json())
         .then((data) => {
           // console.log(data)
@@ -36,7 +34,7 @@ const MyTips = () => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`https://garden-hub-server-three.vercel.app/gardentips/${id}`, {
+        fetch(`http://localhost:5000/gardentips/${id}`, {
           method: "DELETE",
         })
           .then((res) => res.json())
@@ -65,22 +63,17 @@ const MyTips = () => {
       availability: form.availability.value,
     };
 
-    fetch(
-      `https://garden-hub-server-three.vercel.app/gardentips/${selectedTip._id}`,
-      {
-        method: "PATCH",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(updatedTip),
-      }
-    )
+    fetch(`http://localhost:5000/gardentips/${selectedTip._id}`, {
+      method: "PATCH",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(updatedTip),
+    })
       .then((res) => res.json())
       .then(() => {
         toast.success("Tip updated successfully!");
         setSelectedTip(null);
         // Refresh tips list
-        fetch(
-          `https://garden-hub-server-three.vercel.app/gardentips?userEmail=${user.email}`
-        )
+        fetch(`http://localhost:5000/gardentips?userEmail=${user.email}`)
           .then((res) => res.json())
           .then((data) => setTips(data));
       });

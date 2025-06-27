@@ -5,9 +5,7 @@ const FeaturedGardeners = () => {
   const [gardeners, setGardeners] = useState([]);
 
   useEffect(() => {
-    fetch(
-      "https://garden-hub-server-three.vercel.app/gardeners?status=active&limit=6"
-    )
+    fetch("http://localhost:5000/gardeners?status=active&limit=6")
       .then((res) => res.json())
       .then((data) => setGardeners(data))
       .catch((err) => console.error(err));

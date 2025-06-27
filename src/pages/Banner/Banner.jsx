@@ -46,7 +46,7 @@ const Banner = () => {
         {slides.map((slide) => (
           <SwiperSlide key={slide.id}>
             <div
-              className="h-[500px] md:h-[600px] bg-cover bg-center text-white flex flex-col items-center justify-center text-center px-4"
+              className="h-[60vh] bg-cover bg-center text-white flex flex-col items-center justify-center text-center px-4"
               style={{ backgroundImage: `url(${slide.image})` }}
             >
               <Fade cascade>

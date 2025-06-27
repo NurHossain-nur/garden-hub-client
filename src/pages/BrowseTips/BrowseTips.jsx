@@ -10,9 +10,7 @@ const BrowseTips = () => {
 
   useEffect(() => {
     setLoading(true); // move here
-    fetch(
-      "https://garden-hub-server-three.vercel.app/gardentips?availability=public"
-    )
+    fetch("http://localhost:5000/gardentips?availability=public")
       .then((res) => res.json())
       .then((data) => {
         setTips(data);

@@ -4,6 +4,7 @@ import { Link, NavLink } from "react-router";
 import { AuthContext } from "../../provider/AuthProvider";
 import Swal from "sweetalert2";
 import { toast } from "react-toastify";
+import ThemeToggleButton from "./ThemeToggleButton";
 
 const Navbar = () => {
   const { user, logOut } = useContext(AuthContext);
@@ -94,7 +95,47 @@ const Navbar = () => {
           Browse Tips
         </NavLink>
       </li>
+      {!user && (
+        <>
+        <li>
+        <NavLink
+          to="/about"
+          className={({ isActive }) =>
+            isActive
+              ? "text-primary font-semibold underline"
+              : "hover:text-primary"
+          }
+        >
+          About Us
+        </NavLink>
+      </li>
       <li>
+        <NavLink
+          to="/contact"
+          className={({ isActive }) =>
+            isActive
+              ? "text-primary font-semibold underline"
+              : "hover:text-primary"
+          }
+        >
+          Contact
+        </NavLink>
+      </li>
+      <li>
+        <NavLink
+          to="/support"
+          className={({ isActive }) =>
+            isActive
+              ? "text-primary font-semibold underline"
+              : "hover:text-primary"
+          }
+        >
+          Support
+        </NavLink>
+      </li>
+        </>
+      )}
+      {/* <li>
         <NavLink
           to="/share-tip"
           className={({ isActive }) =>
@@ -117,9 +158,9 @@ const Navbar = () => {
         >
           My Tips
         </NavLink>
-      </li>
+      </li> */}
 
-      {/* {user && (
+      {user && (
         <>
           <li>
             <NavLink to="/share-tip" className="hover:text-primary">
@@ -132,7 +173,7 @@ const Navbar = () => {
             </NavLink>
           </li>
         </>
-      )} */}
+      )}
     </>
   );
 
@@ -154,7 +195,7 @@ const Navbar = () => {
         {/* Left: Logo */}
         <div className="navbar-start">
           <Link to="/" className="text-primary font-heading text-3xl font-bold">
-            GardenHub
+            Garden<span className="text-secondary">Hub</span>
           </Link>
         </div>
 
@@ -167,7 +208,7 @@ const Navbar = () => {
 
         {/* Right: Auth or User */}
         <div className="navbar-end space-x-2">
-          <button
+          {/* <button
             onClick={() => {
               const html = document.documentElement;
               const currentTheme = html.getAttribute("data-theme");
@@ -179,12 +220,16 @@ const Navbar = () => {
             title="Toggle Theme"
           >
             🌓
-          </button>
+          </button> */}
+
+          <div className="hidden lg:flex">
+            <ThemeToggleButton></ThemeToggleButton>
+          </div>
 
           {!user ? (
             <Link
               to="/login"
-              className="btn btn-primary btn-sm rounded-full font-semibold"
+              className="btn btn-primary btn-sm rounded-full font-semibold hidden lg:flex"
             >
               Login / SignUp
             </Link>
@@ -198,7 +243,7 @@ const Navbar = () => {
 
               <div
                 onClick={() => setShowLogout(!showLogout)}
-                className="cursor-pointer flex items-center gap-2"
+                className="cursor-pointer hidden lg:flex items-center gap-2"
               >
                 <img
                   src={user.photoURL || "/default-user.png"}
@@ -227,7 +272,7 @@ const Navbar = () => {
             <label tabIndex={0} className="btn btn-ghost lg:hidden">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                className="h-6 w-6 text-base-content"
+                className="h-7 w-7  text-primary"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
@@ -254,6 +299,12 @@ const Navbar = () => {
                   <button onClick={handleLogout}>Logout</button>
                 </li>
               )}
+              <li className="mt-2 border-t pt-2">
+                <div className="flex items-center justify-between">
+                  <span>Theme</span>
+                  <ThemeToggleButton />
+                </div>
+              </li>
             </ul>
           </div>
         </div>
