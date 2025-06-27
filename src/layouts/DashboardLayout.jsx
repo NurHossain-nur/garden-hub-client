@@ -132,7 +132,7 @@ const DashboardLayout = () => {
   );
 
   return (
-    <div className="drawer lg:drawer-open">
+    <div className="drawer lg:drawer-open ">
       {/* Drawer Toggle Button (for mobile) */}
       <input id="dashboard-drawer" type="checkbox" className="drawer-toggle" />
 
