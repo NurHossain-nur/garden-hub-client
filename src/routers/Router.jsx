@@ -12,6 +12,9 @@ import TipDetails from "../pages/TipDetails/TipDetails";
 import MyTips from "../pages/MyTips/MyTips";
 import ExploreGardeners from "../pages/ExploreGardeners/ExploreGardeners";
 import NotFound from "../pages/NotFound/NotFound";
+import AboutUs from "../pages/AboutUs/AboutUs";
+import Contact from "../pages/Contact/Contact";
+import Support from "../pages/Support/Support";
 // import App from "../App";
 
 
@@ -28,7 +31,10 @@ const router = createBrowserRouter([
       { path: "/my-tips", element: <PrivateRoute><MyTips></MyTips></PrivateRoute> },
       { path: "/login", element: <Login></Login> },
       { path: "/register", element: <Register></Register> },
-      { path: "/tip/:id", element: <TipDetails></TipDetails>}
+      { path: "/tip/:id", element: <TipDetails></TipDetails>},
+      { path: "/about", element: <AboutUs></AboutUs>},
+      { path: "/contact", element: <Contact></Contact>},
+      { path: "/support", element: <Support></Support>}
     ]
   },
   {

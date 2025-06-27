@@ -10,7 +10,7 @@ const Root = () => {
   }, []);
 
   return (
-    <div>
+    <div className="min-h-screen flex flex-col justify-between">
       <header>
         <Navbar></Navbar>
       </header>

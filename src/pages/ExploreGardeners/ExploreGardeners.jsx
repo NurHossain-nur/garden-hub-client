@@ -28,12 +28,12 @@ const ExploreGardeners = () => {
   }
 
   return (
-    <div className="max-w-7xl min-h-[550px] mx-auto px-4 my-20 font-sans text-base-content">
+    <div className="max-w-7xl min-h-[550px] mx-auto px-4 my-20 pt-8 font-sans text-base-content">
       <h2 className="text-4xl font-heading text-primary text-center mb-12">
         🔍 Explore Gardeners
       </h2>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
         {gardeners.map((gardener, idx) => (
           <Fade key={idx} triggerOnce>
             <div className="bg-base-300 border h-full border-border rounded-2xl shadow-md hover:shadow-xl transition duration-300 overflow-hidden">

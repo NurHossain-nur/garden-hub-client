@@ -1,9 +1,13 @@
 import { FaFacebookF, FaTwitter, FaInstagram, FaEnvelope } from "react-icons/fa";
+import { Link } from "react-router";
 
 const Footer = () => {
   return (
     <footer className="bg-base-200 text-base-content border-t border-border font-sans pt-10">
-      <div className="max-w-7xl mx-auto px-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 pb-10">
+      <Link to="/" className="text-primary font-heading text-3xl font-bold px-4">
+            Garden<span className="text-secondary">Hub</span>
+          </Link>
+      <div className="max-w-7xl mx-auto mt-4 px-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 pb-10">
         {/* Contact Info */}
         <div>
           <h3 className="text-lg font-medium mb-3 font-heading text-primary">
