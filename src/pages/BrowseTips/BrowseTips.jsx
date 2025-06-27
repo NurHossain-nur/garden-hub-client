@@ -8,12 +8,14 @@ const BrowseTips = () => {
   const [filteredTips, setFilteredTips] = useState([]);
   const [selectedDifficulty, setSelectedDifficulty] = useState("all");
   const [viewType, setViewType] = useState(() => {
-  return localStorage.getItem("tipViewType") || "table";
-});
+    return localStorage.getItem("tipViewType") || "table";
+  });
 
   useEffect(() => {
     setLoading(true);
-    fetch("http://localhost:5000/gardentips?availability=public")
+    fetch(
+      "https://garden-hub-server-three.vercel.app/gardentips?availability=public"
+    )
       .then((res) => res.json())
       .then((data) => {
         setTips(data);
@@ -41,10 +43,10 @@ const BrowseTips = () => {
   };
 
   const handleViewChange = (e) => {
-  const selected = e.target.value;
-  setViewType(selected);
-  localStorage.setItem("tipViewType", selected);
-};
+    const selected = e.target.value;
+    setViewType(selected);
+    localStorage.setItem("tipViewType", selected);
+  };
 
   if (loading) {
     return (

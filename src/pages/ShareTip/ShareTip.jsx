@@ -27,13 +27,16 @@ const ShareTip = () => {
     };
 
     try {
-      const response = await fetch("http://localhost:5000/gardentips", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(tipData),
-      });
+      const response = await fetch(
+        "https://garden-hub-server-three.vercel.app/gardentips",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(tipData),
+        }
+      );
 
       const data = await response.json();
 

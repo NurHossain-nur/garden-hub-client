@@ -17,7 +17,7 @@ const TipDetails = () => {
   const [liked, setLiked] = useState(false);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/gardentips/${id}`)
+    fetch(`https://garden-hub-server-three.vercel.app/gardentips/${id}`)
       .then((res) => res.json())
       .then((data) => {
         setTip(data);
@@ -28,7 +28,7 @@ const TipDetails = () => {
   const handleLike = () => {
     if (liked) return toast.warn("You already liked this tip!");
 
-    fetch(`http://localhost:5000/gardentips/like/${id}`, {
+    fetch(`https://garden-hub-server-three.vercel.app/gardentips/like/${id}`, {
       method: "PATCH",
     })
       .then((res) => res.json())

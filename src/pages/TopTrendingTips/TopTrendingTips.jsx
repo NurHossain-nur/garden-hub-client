@@ -7,7 +7,9 @@ const TopTrendingTips = () => {
   const [tips, setTips] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:5000/gardentips?availability=public")
+    fetch(
+      "https://garden-hub-server-three.vercel.app/gardentips?availability=public"
+    )
       .then((res) => res.json())
       .then((data) => {
         const sorted = data
@@ -54,14 +56,9 @@ const TopTrendingTips = () => {
 
       <div className="text-center mt-10">
         <Link to="/browse-tips">
-          <button className="btn btn-primary btn-wide">
-            See All Tips
-          </button>
+          <button className="btn btn-primary btn-wide">See All Tips</button>
         </Link>
       </div>
-
-
-
     </div>
   );
 };

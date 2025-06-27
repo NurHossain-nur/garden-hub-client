@@ -7,10 +7,10 @@ const AllTips = () => {
   const [search, setSearch] = useState("");
   const [filter, setFilter] = useState("all");
 
-  
-
   useEffect(() => {
-    fetch("http://localhost:5000/gardentips?availability=public")
+    fetch(
+      "https://garden-hub-server-three.vercel.app/gardentips?availability=public"
+    )
       .then((res) => res.json())
       .then((data) => {
         setTips(data);
@@ -20,9 +20,12 @@ const AllTips = () => {
   }, []);
 
   const filteredTips = tips.filter((tip) => {
-    const matchesSearch = tip.title.toLowerCase().includes(search.toLowerCase());
+    const matchesSearch = tip.title
+      .toLowerCase()
+      .includes(search.toLowerCase());
     const matchesFilter =
-      filter === "all" || tip.difficulty ?.toLowerCase() === filter.toLowerCase();
+      filter === "all" ||
+      tip.difficulty?.toLowerCase() === filter.toLowerCase();
     return matchesSearch && matchesFilter;
   });
 
@@ -55,9 +58,9 @@ const AllTips = () => {
           onChange={(e) => setFilter(e.target.value)}
         >
           <option value="all">All Difficulties</option>
-  <option value="Easy">Easy</option>
-  <option value="Medium">Medium</option>
-  <option value="Hard">Hard</option>
+          <option value="Easy">Easy</option>
+          <option value="Medium">Medium</option>
+          <option value="Hard">Hard</option>
         </select>
       </div>
 
